@@ -17,4 +17,13 @@ class TicTacToeBoardTest : public ::testing::Test
 TEST(TicTacToeBoardTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
+
+}
+TEST(TicTacToeBoardTest, placePieceTest)
+{
+	TicTacToeBoard ttt;
+	ASSERT_TRUE(ttt.placePiece(0,0) == X);
+	ASSERT_TRUE(ttt.placePiece(1,1) == O);
+	ASSERT_TRUE(ttt.placePiece(3,3) == Invalid);
+	ASSERT_TRUE(ttt.placePiece(0,0) == X);
 }
