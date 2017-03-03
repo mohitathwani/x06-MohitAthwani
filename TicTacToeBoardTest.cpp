@@ -51,13 +51,17 @@ TEST(TicTacToeBoardTest, getPieceTest_ValidLocationTest)
 
 TEST(TicTacToeBoardTest, getPiece_InvalidLocationTest)
 {
-	ASSERT_TRUE(ttt.getPiece(3,3) == Invalid);
-	ASSERT_TRUE(ttt.getPiece(-1,-3) == Invalid);
-
+	ASSERT_TRUE(ttt.getPiece(3,1) == Invalid);
+	ASSERT_TRUE(ttt.getPiece(4,1) == Invalid);
+	ASSERT_TRUE(ttt.getPiece(1,3) == Invalid);
+	ASSERT_TRUE(ttt.getPiece(1,4) == Invalid);
+	ASSERT_TRUE(ttt.getPiece(-1,1) == Invalid);
+	ASSERT_TRUE(ttt.getPiece(1,-1) == Invalid);
 }
 TEST(TicTacToeBoardTest, getWinnerTest) {
-	ASSERT_TRUE(ttt.placePiece(1,0) == X);
+	ASSERT_TRUE(ttt.placePiece(1,0) == O);
 	ASSERT_TRUE(ttt.placePiece(0,1) == X);
-	ASSERT_TRUE(ttt.placePiece(2,0) == X);
+	ASSERT_TRUE(ttt.placePiece(2,0) == O);
+	ASSERT_TRUE(ttt.placePiece(0,2) == X);
 	ASSERT_TRUE(ttt.getWinner() == X);
 }
