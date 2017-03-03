@@ -32,7 +32,7 @@ TEST(TicTacToeBoardTest, placePiece_Row_Equals_3_Col_Valid)
 	ASSERT_TRUE(ttt.placePiece(3,1) == Invalid);
 }
 
-TEST(TictacToeBoardTest, placePiece_Row_Greater_Than_3_Col_Valid)
+TEST(TicTacToeBoardTest, placePiece_Row_Greater_Than_3_Col_Valid)
 {
 	ASSERT_TRUE(ttt.placePiece(5, 1) == Invalid);
 }
@@ -148,7 +148,7 @@ TEST(TicTacToeBoardTest, getWinnerTest_Invalid)
 {
 	ttt.clearBoard();
 	ASSERT_TRUE(ttt.placePiece(0,2) == X);
-	ASSERT_TRUE(ttt.getWinner() == Blank);
+	ASSERT_TRUE(ttt.getWinner() == Invalid);
 }
 
 TEST(TicTacToeBoardTest, getWinnerTest_Blank)
@@ -163,5 +163,5 @@ TEST(TicTacToeBoardTest, getWinnerTest_Blank)
 	ASSERT_TRUE(ttt.placePiece(1,2) == X);
 	ASSERT_TRUE(ttt.placePiece(2,0) == O);
 	ASSERT_TRUE(ttt.placePiece(2,2) == X);
-	ASSERT_TRUE(ttt.getWinner() == Invalid);
+	ASSERT_TRUE(ttt.getWinner() == Blank);
 }
