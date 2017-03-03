@@ -99,10 +99,12 @@ TEST(TicTacToeBoardTest, getPiece_Row_Valid_Col_Less_Than_0)
 	ASSERT_TRUE(ttt.getPiece(1,-1) == Invalid);
 }
 
-TEST(TicTacToeBoardTest, getWinnerTest) {
+TEST(TicTacToeBoardTest, getHorizontalWinnerTest) {
+	ttt.clearBoard();
+	ASSERT_TRUE(ttt.placePiece(0,0) == X);
 	ASSERT_TRUE(ttt.placePiece(1,0) == O);
 	ASSERT_TRUE(ttt.placePiece(0,1) == X);
-	ASSERT_TRUE(ttt.placePiece(2,0) == O);
+	ASSERT_TRUE(ttt.placePiece(1,1) == O);
 	ASSERT_TRUE(ttt.placePiece(0,2) == X);
 	ASSERT_TRUE(ttt.getWinner() == X);
 }

@@ -19,7 +19,7 @@ TicTacToeBoard::TicTacToeBoard()
 //		}
 //	}
 	clearBoard();
-	turn = X;
+//	turn = X;
 }
 
 //Resets each board location to the Blank Piece value
@@ -30,6 +30,7 @@ void TicTacToeBoard::clearBoard()
 			board[i][j] = Blank;
 		}
 	}
+	turn = X;
 }
 
 /**
