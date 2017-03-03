@@ -20,15 +20,22 @@ TEST(TicTacToeBoardTest, sanityCheck)
 	ASSERT_TRUE(true);
 
 }
-TEST(TicTacToeBoardTest, placePieceTest)
+TEST(TicTacToeBoardTest, placePiece_ValidLocationTest)
 {
 	//TicTacToeBoard ttt;
 	ASSERT_TRUE(ttt.placePiece(0,0) == X);
 	ASSERT_TRUE(ttt.placePiece(1,1) == O);
+}
+
+TEST(TicTacToeBoardTest, placePiece_invalidLocationTest)
+{
 	ASSERT_TRUE(ttt.placePiece(3,3) == Invalid);
 	ASSERT_TRUE(ttt.placePiece(-1,-1) == Invalid);
+}
+
+TEST(TicTacToeBoardTest, placePiece_replaceTest)
+{
 	ASSERT_TRUE(ttt.placePiece(0,0) == X);
-	ASSERT_TRUE(ttt.placePiece(2,2) == X);
 }
 
 TEST(TicTacToeBoardTest, getPieceTest) {
